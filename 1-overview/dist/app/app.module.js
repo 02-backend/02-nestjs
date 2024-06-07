@@ -9,12 +9,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const users_module_1 = require("../routes/users/users.module");
+const prisma_module_1 = require("./prisma/prisma.module");
+const log_middleware_1 = require("../middlewares/log.middleware");
 let AppModule = class AppModule {
+    configure(consumer) {
+        consumer.apply(log_middleware_1.LogMiddleWare).forRoutes({
+            path: 'users',
+            method: common_1.RequestMethod.GET,
+        });
+    }
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [users_module_1.UsersModule],
+        imports: [prisma_module_1.PrismaModule, users_module_1.UsersModule],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

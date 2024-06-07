@@ -1,6 +1,6 @@
 import { PrismaService } from 'src/app/prisma/prisma.service';
-import { UserRole } from 'src/models/user.model';
 import { CreateUserDto, UpdateUserDto } from './users.dto';
+import { UserRole } from './user.model';
 export declare class UsersService {
     private prisma;
     constructor(prisma: PrismaService);

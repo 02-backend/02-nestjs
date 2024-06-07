@@ -1,4 +1,4 @@
-import { UserModel } from 'src/models/user.model';
+import { UserModel } from './user.model';
 declare const CreateUserDto_base: import("@nestjs/mapped-types").MappedType<Pick<UserModel, "name" | "email" | "role">>;
 export declare class CreateUserDto extends CreateUserDto_base {
 }
