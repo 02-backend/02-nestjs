@@ -2,7 +2,8 @@ import { Global, Module } from '@nestjs/common';
 import { PrismaService } from './prisma.service';
 
 /**
- * Prisma module is set to global by using @Global(), which only needs to register one place (app module)
+ * Prisma can be used inside specific modules by importing to a module (imports: [PrismaModule])
+ * or used globally by apply @Global() decorator and register at one module (App module)
  */
 
 @Global()

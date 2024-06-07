@@ -7,9 +7,10 @@ import {
 import { UsersModule } from 'src/routes/users/users.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { LogMiddleware } from 'src/middlewares/log.middleware';
+import { ResourcesModule } from 'src/routes/resources/resources.module';
 
 @Module({
-  imports: [PrismaModule, UsersModule],
+  imports: [PrismaModule, UsersModule, ResourcesModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
