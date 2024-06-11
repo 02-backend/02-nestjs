@@ -1,4 +1,5 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+
 /**
  * Guard determines
  * - whether a given request will be handled by the route handler or not, depending on certain condition
@@ -9,7 +10,6 @@ import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 export class DocsGuard implements CanActivate {
   canActivate(context: ExecutionContext) {
     const req = context.switchToHttp().getRequest();
-    console.log(req.headers);
     const { readable } = req.headers;
 
     return readable === 'allow';
